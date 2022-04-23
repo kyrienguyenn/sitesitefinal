@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="handler" href="handler.php">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        $(function()
+        {
+            function after_form_submitted(data)
+            {
+                if(data.result == 'success')
+                {
+                    $('form#reused_form').hide();
+                    $('#success_message').show();
+                    $('#error_message').hide();
+                }
+                else
+                {
+                    $('#error_message').append('<ul></ul>');
+        
+                    jQuery.each(data.errors,function(key,val)
+                    {
+                        $('#error_message ul').append('<li>'+key+':'+val+'</li>');
+                    });
+                    $('#success_message').hide();
+                    $('#error_message').show();
+        
+                    //reverse the response on the button
+                    $('button[type="button"]', $form).each(function()
+                    {
+                        $btn = $(this);
+                        label = $btn.prop('orig_label');
+                        if(label)
+                        {
+                            $btn.prop('type','submit' );
+                            $btn.text(label);
+                            $btn.prop('orig_label','');
+                        }
+                    });
+        
+                }//else
+            }
+        
+            $('#reused_form').submit(function(e)
+              {
+                e.preventDefault();
+        
+                $form = $(this);
+                //show some response on the button
+                $('button[type="submit"]', $form).each(function()
+                {
+                    $btn = $(this);
+                    $btn.prop('type','button' );
+                    $btn.prop('orig_label',$btn.text());
+                    $btn.text('Sending ...');
+                });
+        
+        
+                            $.ajax({
+                        type: "POST",
+                        url: 'handler.php',
+                        data: $form.serialize(),
+                        success: after_form_submitted,
+                        dataType: 'json'
+                    });
+        
+              });
+        });
+        </script>
+        <style>
+            body{
+        
+                background-color: black;
+            
+            }
+            .ros{
+                width: 500px;
+                border: 1px solid black ;
+                margin-left: 450px;
+
+                padding-top: 400px;
+               background-color: white;
+               
+               border-radius: 0.5rem;
+               padding: 13px;
+            
+            }
+            .row{
+                padding-bottom: 15px;
+            }
+            div.col-sm-12 button{
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 228px;
+                margin-bottom: 0;
+                border-radius: 0.4rem;
+                background-color: orange;
+                box-shadow: inset;
+                color: white;
+                font-weight: 600;
+                font-size: larger;
+            
+                
+            }
+            .row2{
+                display: flex;
+                margin: 18px;
+                padding-bottom: 15px;
+            }
+            .row2 input{
+                border-radius: 0.3rem;
+                width: 200px;
+                height: 30px;
+                border-color: gray;
+            }
+            .col-sm-12 textarea{
+                width: 97%;
+                border-radius: 0.3rem;
+            }
+            .col-md-offset-3 h2{
+                justify-content: center;
+                text-align: center;
+            }
+            .btn:hover{
+                background-color: red;
+            }
+        </style>
+        <div class="imagebg"></div>
+        <div class="row ros " style="margin-top: 50px">
+            <div class="col-md-6 col-md-offset-3 form-container">
+                <h2>Feedback</h2>
+                <p>
+                    Vui lòng cung cấp phản hồi của bạn dưới đây: 
+                </p>
+                <form role="form" method="post" id="reused_form">
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                        <label><b>  Bạn đánh giá trải nghiệm tổng thể của mình như thế nào?</b></label>
+                        <p>
+                            <label class="radio-inline">
+                            <input type="radio" name="experience" id="radio_experience" value="bad" >
+                            Không tốt
+                            </label>
+        
+                            <label class="radio-inline">
+                            <input type="radio" name="experience" id="radio_experience" value="average" >
+                            Bình thường
+                            </label>
+        
+                            <label class="radio-inline">
+                            <input type="radio" name="experience" id="radio_experience" value="good" >
+                            Tốt
+                            </label>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <label for="comments">
+                                Bình luận:</label> <br>
+                                <br>
+                            <textarea class="form-control" type="textarea" name="comments" id="comments" placeholder="Bình luận tại đây" maxlength="6000" rows="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="col-sm-6 form-group">
+                            <label for="name">
+                                Tên của bạn:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="email">
+                                Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                    </div>
+        
+                                <div class="row3">
+                        <div class="col-sm-12 form-group">
+                            <button type="submit" class="btn btn-lg btn-warning btn-block" onclick="alert('Bạn gửi phản hồi thành công')">Đăng </button>
+                        </div>
+                    </div>
+        
+                </form>
+                <div id="success_message" style="width:100%; height:100%; display:none; ">
+                    <h3>Bài phản hồi của bạn đã gửi thành công!</h3>
+                </div>
+                <div id="error_message"
+                        style="width:100%; height:100%; display:none; ">
+                            <h3>Error</h3>
+                            Sorry there was an error sending your form.
+        
+                </div>
+            </div>
+        </div>
+</body>
+</html>

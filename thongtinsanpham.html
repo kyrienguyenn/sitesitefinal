@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5500">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b12e1c5ed4.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="image/logo/logo6.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body class="ad"> 
+    <div  class="container">
+        <div class="logo" > 
+            <a href="http://127.0.0.1:5500/index.html">
+                <img class="img1"  src="image/logo/logo7.png" alt="" ></a>
+            </div>
+            <div class="search-content">
+                <button class="search-icon"><i class="search-icon-icon fa-solid fa-magnifying-glass" ></i></button>
+                <input class="search-box" type="text" placeholder="Search" >
+               
+            </div>
+            <div class="list">
+                <ul class="box2-header">
+                    <li class="a-sub"><a href="">Men</a>
+                        <ul class="a-sub-menu">
+                            <li><a href="http://127.0.0.1:5500/menshoes.html">Shoes</a></li>
+                            <li><a href="http://127.0.0.1:5500/menclothing.html">Clothing</a></li>
+                        </ul>
+                    </li>
+                    <li class="a-sub has-child"><a href="">Women</a>
+                        <ul class="a-sub-menu">
+                            <li><a href="http://127.0.0.1:5500/womenshoes.html">Shoes</a></li>
+                            <li><a href="http://127.0.0.1:5500/womenclothing.html">Clothing</a></li>
+                        </ul>
+                    </li>
+                    <li class="a-sub"><a href="http://127.0.0.1:5500/collection.html">Collection</a></li>                    <li class="a"><a href="http://127.0.0.1:5500/about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="sanphamthongtin">
+        <div class="sanpham">
+            <img id="img2" src="image/men/menshoe/blazer.jpg" alt="">
+            <ul>
+                <li><h3>Bestseller</h3></li>
+                <li><b> Nike Air Force 1 '07</b> </li>
+                <li><p class="color">1 Colour</p></li>
+                <li>
+                    Size:
+                    <select name="Size" id="Size">
+                        <option value="">7 </option>
+                        <option value="">7.5</option>
+                        <option value="">8 </option>
+                        <option value="">8.5</option>
+                        <option value="">9 </option>
+                    </select>
+                </li>
+                <li>
+                <span class="quanity">  Quanity:
+                    <button onClick='decreaseCount(event, this)'>-</button>
+                    <input type="text" value="1">
+                    <button onClick='increaseCount(event, this)'>+</button>
+                </span>
+                </li>
+
+
+
+                  <script type="text/javascript">
+                    function increaseCount(a, b) {
+                      var input = b.previousElementSibling;
+                      var value = parseInt(input.value, 10); 
+                      value = isNaN(value)? 0 : value;
+                      value ++;
+                      input.value = value;
+                    }
+                    function decreaseCount(a, b) {
+                      var input = b.nextElementSibling;
+                      var value = parseInt(input.value, 10); 
+                      if (value > 1) {
+                        value = isNaN(value)? 0 : value;
+                        value --;
+                        input.value = value;
+                      }
+                    }
+                  </script>
+
+
+                <li>
+                    <p class="price"> 2,649,000 ₫ </p>
+                </li>
+            </ul>
+
+        </div>
+        <div class="thongtin">
+            <h1>Mô Tả Sản Phẩm</h1>
+            <div>Phong cách cho những năm 70. Được yêu thích vào những năm 80. Cổ điển trong những năm 90. Sẵn sàng cho tương lai Nike Blazer Mid '77 Premium mang đến một thiết kế vượt thời gian dễ mặc. Da trên phá vỡ đẹp mắt và được kết hợp với thương hiệu retro và điểm nhấn da lộn cho một cái nhìn cổ điển. Bọt lộ ra trên lưỡi và một kết thúc midsole đặc biệt làm cho nó trông giống như bạn vừa kéo chúng ra khỏi sách lịch sử. Hãy tiếp tục, hoàn thiện trang phục của bạn. <br>
+                <br>
+                <h4>Lợi ích</h4>
+                <ol>
+                    <li>- Da lộn phía trên mềm mại và bền.</li>
+                    <li>- Lưỡi tiếp xúc và kim tiêm cung cấp cho bạn phong cách di sản.</li>
+                    <li>- Cấu trúc lưu hóa hợp nhất đế ngoài đến đế giữa để có một cái nhìn hợp lý mà bạn có thể mặc ở bất cứ đâu.</li>
+                    <li>- Đế cao su với hoa văn xương cá làm tăng thêm lực kéo và độ bền.</li>
+                    <li>- Điều trị midsole cổ điển làm cho nó trông giống như bạn đã tiết kiệm chúng trong nhiều năm.</li>
+                </ol>
+                <br>
+                <h4>Chi tiết sản phẩm</h4> 
+                <ol class="chitietsanpham">
+                    <li>- Da tổng hợp Swoosh</li>
+                    <li>- Cổ áo đệm</li>
+                    <li>- Màu sắc hiển thị: Mây / Sữa dừa / Alpha Orange / Sô cô la nhẹ</li>
+                    <li>- Kiểu dáng: DM0178-200</li>
+                    <li>- Quốc gia/Vùng xuất xứ: Indonesia</li>
+                </ol>
+            </div>
+            <div>
+                 <input class="buy shoes" type="submit" value="Mua "onclick="alert('Bạn đã mua hàng thành công')" >
+            </div>
+
+        </div>
+    </div>
+    <div class="buttonback">
+        <button><a href="http://127.0.0.1:5500/menshoes.html">Back</a></button>
+    </div>
+
+     <footer class="footer-all">
+        <div>
+            <ul class="footer-first">
+                <li><a href="http://127.0.0.1:5500/map.html"> FIND A STORE</li></a>
+                <li><a href="http://127.0.0.1:5500/login.html?#">BECOME A MEMBER</a> </li>
+                <li><a href="http://127.0.0.1:5500/feedback.html"> SEND US FEEDBACK</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <h3 id="id-footer">Get Help</h3>
+                <li><a href="http://127.0.0.1:5500/delivery.html"> Delivery</a></li>
+                <li><a href="http://127.0.0.1:5500/payoption.html"> Payment Options</a></li>
+
+            </ul>
+        </div>
+
+        <div>
+            <ul>
+                <h3 id="id-footer">Contact</h3>
+                <li>1-800-806-6453</li>
+                <li>4 am - 11 pm PT</li>
+                <li>7 days a week</li>
+
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

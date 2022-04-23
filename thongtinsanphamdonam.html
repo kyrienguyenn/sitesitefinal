@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5500">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b12e1c5ed4.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="image/logo/logo6.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body class="ad"> 
+    <div  class="container">
+        <div class="logo" > 
+            <a href="http://127.0.0.1:5500/index.html">
+                <img class="img1"  src="image/logo/logo7.png" alt="" ></a>
+            </div>
+            <div class="search-content">
+                <button class="search-icon"><i class="search-icon-icon fa-solid fa-magnifying-glass" ></i></button>
+                <input class="search-box" type="text" placeholder="Search" >
+               
+            </div>
+            <div class="list">
+                <ul class="box2-header">
+                    <li class="a-sub"><a href="">Men</a>
+                        <ul class="a-sub-menu">
+                            <li><a href="http://127.0.0.1:5500/menshoes.html">Shoes</a></li>
+                            <li><a href="http://127.0.0.1:5500/menclothing.html">Clothing</a></li>
+                        </ul>
+                    </li>
+                    <li class="a-sub has-child"><a href="">Women</a>
+                        <ul class="a-sub-menu">
+                            <li><a href="http://127.0.0.1:5500/womenshoes.html">Shoes</a></li>
+                            <li><a href="http://127.0.0.1:5500/womenclothing.html">Clothing</a></li>
+                        </ul>
+                    </li>
+                    <li class="a-sub"><a href="http://127.0.0.1:5500/collection.html">Collection</a></li>                    <li class="a"><a href="http://127.0.0.1:5500/about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="sanphamthongtin">
+        <div class="sanpham">
+            <img id="img2" src="image/men/menclothing/basketballtshirt1119.jpg" alt="">
+            <ul>
+                <li><h3>Bestseller</h3></li>
+                <li><b>Nike Basketball T-shirt</b> </li>
+                <li><p class="color">1 Colour</p></li>
+                <li>
+                    Size:
+                    <select name="" id="">
+                        <option value="">SM</option>
+                        <option value="">M</option>
+                        <option value="">L</option>
+                        <option value="">XL</option>
+                    </select>
+                </li>
+                <li>
+                    <span class="quanity">  Quanity:
+                        <button onClick='decreaseCount(event, this)'>-</button>
+                        <input type="text" value="1">
+                        <button onClick='increaseCount(event, this)'>+</button>
+                    </span>
+                    </li>
+    
+    
+    
+                      <script type="text/javascript">
+                        function increaseCount(a, b) {
+                          var input = b.previousElementSibling;
+                          var value = parseInt(input.value, 10); 
+                          value = isNaN(value)? 0 : value;
+                          value ++;
+                          input.value = value;
+                        }
+                        function decreaseCount(a, b) {
+                          var input = b.nextElementSibling;
+                          var value = parseInt(input.value, 10); 
+                          if (value > 1) {
+                            value = isNaN(value)? 0 : value;
+                            value --;
+                            input.value = value;
+                          }
+                        }
+                      </script>
+                <li>
+                    <p class="price"> 2,649,000 ₫ </p>
+                </li>
+            </ul>
+        </div>
+        <div class="thongtin">
+            <h1>Mô Tả Sản Phẩm</h1>
+            <div>Tee bông 100% này mát mẻ và thoải mái, trong và ngoài sân. Một sự phù hợp dễ dàng và đồ họa Jordan ở cả hai bên sẽ có bạn đạt được cho nó hàng ngày. <br>
+                <br>
+                <h4>Chi tiết sản phẩm</h4>
+                <ol>
+                    <li>- Jordan Tiêu chuẩn phù hợp</li>
+                    <li>- Đồ họa ở mặt trước và mặt sau</li>
+                    <li>- Máy giặt lạnh</li>
+                    <li>- 100% cotton</li>
+                    <li>- Kiểu: DM1462-100</li>
+                </ol>
+              
+            </div>
+            <div>
+                 <input class="buy shoes alo" type="submit" value="Mua "onclick="alert('Bạn đã mua hàng thành công')" >
+            </div>
+
+        </div>
+    </div>
+    <div class="buttonback">
+        <button><a href="http://127.0.0.1:5500/menclothing.html">Back</a></button>
+    </div>
+
+    <!-- <div class="thongtinsanpham">
+        <div class="thongtinsanpham1">
+            <img id="img2" src="image/men/menshoe/blazer.jpg" alt="">
+            <h3>Bestseller</h3>
+            <h4>Nike Air Force 1 '07</h4>
+            <p class="color">1 Colour</p>
+            <p>
+                Size:
+                <select name="" id="">
+                    <option value="">7</option>
+                    <option value="">7.5</option>
+                    <option value="">8</option>
+                    <option value="">8.5</option>
+                    <option value="">9</option>
+                </select>
+            </p>
+            <div class="discount">
+                <p class="price"> 2,649,000 ₫ </p>
+            </div>
+        </div>
+        
+        <div class="thongtinsanpham2">        
+            <span class="word1" >
+            <h1>MÔ TẢ SẢN PHẨM</h1>
+            The Nike swoosh symbol is one of the world’s simplest but most effective branding visuals. Along with athletes and sports followers, millennials like buying products bearing the Nike logo. In fact, 62% of the sports shoe market belongs to Nike. The swoosh image has a life of its own as it’s already patented and extremely popular. <br>
+
+Nike is a United States corporation with headquarters in Washington County in the state of Oregon. In 1964 the company was founded by Phil Knight and Bill Bowerman. The company was initially known as Blue Ribbon Sports but switched to the present Nike name in 1971. <br>
+
+Nike has over 44,000 employees around the globe, and its total assets are about $15 billion. The company has more than 700 outlets worldwide and sells a wide variety of sports apparel with creative packaging. Its most popular athletic shoes bear the Nike emblem. <br>
+
+The Nike Logo is, in some way, the best type of emotional communication. Through its slogan “Just Do It” and visual elements, the company has endeavored to promote the psychological impact of its products. <br>
+<b>Just do it is among the most popular taglines in the world. In just three words this simple tagline empowers athletes everywhere to stop overthinking and just take the first step. That’s all there is to it. Why? Because if you have a body, you are an athlete.</b> 
+            </span>
+        </div>
+    </div>
+     -->
+    <footer class="footer-all">
+        <div>
+            <ul class="footer-first">
+                <li><a href="http://127.0.0.1:5500/map.html"> FIND A STORE</li></a>
+                <li><a href="http://127.0.0.1:5500/login.html?#">BECOME A MEMBER</a> </li>
+                <li><a href="http://127.0.0.1:5500/feedback.html"> SEND US FEEDBACK</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <h3 id="id-footer">Get Help</h3>
+                <li><a href="http://127.0.0.1:5500/delivery.html"> Delivery</a></li>
+                <li><a href="http://127.0.0.1:5500/payoption.html"> Payment Options</a></li>
+
+            </ul>
+        </div>
+
+        <div>
+            <ul>
+                <h3 id="id-footer">Contact</h3>
+                <li>1-800-806-6453</li>
+                <li>4 am - 11 pm PT</li>
+                <li>7 days a week</li>
+
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
